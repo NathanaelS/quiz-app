@@ -1,5 +1,8 @@
 $(document).ready(function() {
-    $('h3').text('is it still working?');
-    $('p').text('this is test');
-    $('button').text('test button');
+
+	$( "input" ).on( "click", function() {
+		if ($('input:checked').val() === "banana") {
+  		$( "#log" ).html( $( "input:checked" ).val() + " is correct!" );
+		}else { $("#log").html( $("input:checked").val() + " is wrong!")}
+		});
 });
