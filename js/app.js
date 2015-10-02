@@ -13,19 +13,18 @@ $(document).ready(function() {
 		];
 	
 	//This prints the first value of the questionDatabase to the page
-	//I am unable to get it to print automatically inside of the click function, so first the data is stored in the database
-	//	and then the first value is displayed
-	document.getElementById('question').innerHTML = questionDatabase[counter];
+	$('#question').text(questionDatabase[counter]);
 
 
 	//See questionDatabase
 	var answerDatabase0 = [
 		"answer1",
-		"answer2",
-		"answer3"
+		"giggety",
+		"giggety goo"
 		];
 
-	document.getElementById('a0').innerHTML = answerDatabase0[counter];
+	$('#ans1').find("label").text(answerDatabase0[counter]);
+    $('#ans1').find("input").prop("value", answerDatabase0[counter]);
 
 	var answerDatabase1 = [
 		"a1",
@@ -33,7 +32,8 @@ $(document).ready(function() {
 		"answer3"
 		];
 
-	document.getElementById('a1').innerHTML = answerDatabase1[counter];
+	$('#ans2').find("label").text(answerDatabase1[counter]);
+    $('#ans2').find("input").prop("value", answerDatabase1[counter]);
 
 	var answerDatabase2 = [
 		"ans1",
@@ -41,21 +41,23 @@ $(document).ready(function() {
 		"answer3"
 		];
 
-	document.getElementById('a2').innerHTML = answerDatabase2[counter];
+	$('#ans3').find("label").text(answerDatabase2[counter]);
+    $('#ans3').find("input").prop("value", answerDatabase2[counter]);
 
 	 //Every time that the next button is clicked, this cycles through the array.
-	 //Need to find a way to make this stop after it reaches the length of the array it is cycling through, 
-	 	//I tried a for loop and screwed up somehwere
-	 $('#next').click(function () {
-	 	counter++;
+	$('#next').click(function () {
+		counter++;
+	 	console.log(counter);
 
-    	console.log(counter);
-    	$('#element1').find("label").text(answerDatabase0[counter]);
-    	$('#element1').find("input").prop("value", answerDatabase0[counter]);
-    	document.getElementById('question').innerHTML = questionDatabase[counter];
-    	// document.getElementById('a0').innerHTML = answerDatabase0[counter];
-    	document.getElementById('a1').innerHTML = answerDatabase1[counter];
-    	document.getElementById('a2').innerHTML = answerDatabase2[counter];
+	 	$('#question').text(questionDatabase[counter]);
+    	$('#ans1').find("label").text(answerDatabase0[counter]);
+    	$('#ans1').find("input").prop("value", answerDatabase0[counter]);
+    	$('#ans2').find("label").text(answerDatabase1[counter]);
+    	$('#ans2').find("input").prop("value", answerDatabase1[counter]);
+    	$('#ans3').find("label").text(answerDatabase2[counter]);
+    	$('#ans3').find("input").prop("value", answerDatabase2[counter]);
+    	$('input[name=answer]').attr('checked',false);
+    	// $('input[name=answer]').attr('value', "" );
 		});
 
 	//This displays to the user the answer that they checked 
