@@ -46,9 +46,10 @@ $(document).ready(function() {
 
 	 //Every time that the next button is clicked, this cycles through the array.
 	$('#next').click(function () {
+
 		counter++;
 	 	console.log(counter);
-
+		
 	 	$('#question').text(questionDatabase[counter]);
     	$('#ans1').find("label").text(answerDatabase0[counter]);
     	$('#ans1').find("input").prop("value", answerDatabase0[counter]);
@@ -57,6 +58,12 @@ $(document).ready(function() {
     	$('#ans3').find("label").text(answerDatabase2[counter]);
     	$('#ans3').find("input").prop("value", answerDatabase2[counter]);
     	$('input[name=answer]').attr('checked',false);
+    	$('#log').text( '' );
+
+   //  	counter++;
+	 	// console.log(counter);
+
+
     	// $('input[name=answer]').attr('value', "" );
 		});
 
