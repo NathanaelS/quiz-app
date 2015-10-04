@@ -59,12 +59,7 @@ $(document).ready(function() {
     	$('#ans3').find("input").prop("value", answerDatabase2[counter]);
     	$('input[name=answer]').attr('checked',false);
     	$('#log').text( '' );
-
-   //  	counter++;
-	 	// console.log(counter);
-
-
-    	// $('input[name=answer]').attr('value', "" );
+    	
 		});
 
 	//This displays to the user the answer that they checked 
