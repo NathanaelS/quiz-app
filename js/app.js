@@ -16,30 +16,35 @@ $(document).ready(function() {
 	$('#question').text(questionDatabase[counter]);
 
 
+	var ans
+
 	//See questionDatabase
-	var answerDatabase0 = [
-		"answer1",
+	var answerDatabase = [
+		
+		["answer1",
 		"giggety",
 		"giggety goo"
+		],
+
+		[
+		"a1",
+		"answer2",
+		"answer3"
+		],
+
+		[
+		"ans1",
+		"answer2",
+		"answer3"
+		]
+
 		];
 
 	$('#ans1').find("label").text(answerDatabase0[counter]);
     $('#ans1').find("input").prop("value", answerDatabase0[counter]);
-
-	var answerDatabase1 = [
-		"a1",
-		"answer2",
-		"answer3"
-		];
-
+		
 	$('#ans2').find("label").text(answerDatabase1[counter]);
     $('#ans2').find("input").prop("value", answerDatabase1[counter]);
-
-	var answerDatabase2 = [
-		"ans1",
-		"answer2",
-		"answer3"
-		];
 
 	$('#ans3').find("label").text(answerDatabase2[counter]);
     $('#ans3').find("input").prop("value", answerDatabase2[counter]);
