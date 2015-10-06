@@ -15,8 +15,8 @@ $(document).ready(function() {
 	//This prints the first value of the questionDatabase to the page
 	$('#question').text(questionDatabase[counter]);
 
-
-	var ans
+	//These are the answer variables
+	var $ans1 = $('#ans1'), $ans2 = $('#ans2'), $ans3 = $('#ans3');
 
 	//See questionDatabase
 	var answerDatabase = [
@@ -36,34 +36,40 @@ $(document).ready(function() {
 		"ans1",
 		"answer2",
 		"answer3"
-		]
+		],
 
 		];
 
-	$('#ans1').find("label").text(answerDatabase0[counter]);
-    $('#ans1').find("input").prop("value", answerDatabase0[counter]);
+		//Like the question part, this will input the first values onto the page
+	$ans1.find("label").text(answerDatabase[0][counter]);
+    $ans1.find("input").prop("value", answerDatabase[0][counter]);
 		
-	$('#ans2').find("label").text(answerDatabase1[counter]);
-    $('#ans2').find("input").prop("value", answerDatabase1[counter]);
+	$ans2.find("label").text(answerDatabase[1][counter]);
+    $ans2.find("input").prop("value", answerDatabase[1][counter]);
 
-	$('#ans3').find("label").text(answerDatabase2[counter]);
-    $('#ans3').find("input").prop("value", answerDatabase2[counter]);
+	$ans3.find("label").text(answerDatabase[2][counter]);
+    $ans3.find("input").prop("value", answerDatabase[2][counter]);
 
 	 //Every time that the next button is clicked, this cycles through the array.
 	$('#next').click(function () {
 
+		//Increases the counter by one and displays the number in the console
 		counter++;
 	 	console.log(counter);
-		
-	 	$('#question').text(questionDatabase[counter]);
-    	$('#ans1').find("label").text(answerDatabase0[counter]);
-    	$('#ans1').find("input").prop("value", answerDatabase0[counter]);
-    	$('#ans2').find("label").text(answerDatabase1[counter]);
-    	$('#ans2').find("input").prop("value", answerDatabase1[counter]);
-    	$('#ans3').find("label").text(answerDatabase2[counter]);
-    	$('#ans3').find("input").prop("value", answerDatabase2[counter]);
-    	$('input[name=answer]').attr('checked',false);
+
+	 	//Unchecks the radio button and clears the text
+	 	$('input[name=answer]').attr('checked',false);
     	$('#log').text( '' );
+		
+		//Advances the questions and answers the the next values
+	 	$('#question').text(questionDatabase[counter]);
+    	$ans1.find("label").text(answerDatabase[0][counter]);
+    	$ans1.find("input").prop("value", answerDatabase[0][counter]);
+    	$ans2.find("label").text(answerDatabase[1][counter]);
+    	$ans2.find("input").prop("value", answerDatabase[1][counter]);
+    	$ans3.find("label").text(answerDatabase[2][counter]);
+    	$ans3.find("input").prop("value", answerDatabase[2][counter]);
+    	
     	
 		});
 
