@@ -1,9 +1,11 @@
-$(document).ready(function() {
+	counter = 0;
+
+	$(document).ready(function() {
 
 	//This starts the counter for our click through function
 	//An option to do here is set it to -1, so the user must click next in order to see the first question upon loading
-	var counter = 0;
-	
+
+
 
 	//This is the question database, where the question the student will be asked is stored
 	var questionDatabase = [
@@ -20,18 +22,18 @@ $(document).ready(function() {
 
 	//See questionDatabase
 	var answerDatabase = [
-		
+		//button 1 answers
 		["answer1",
 		"giggety",
 		"giggety goo"
 		],
-
+		//button 2 answers	
 		[
 		"a1",
 		"answer2",
 		"answer3"
 		],
-
+		//button 3 answers
 		[
 		"ans1",
 		"answer2",
@@ -90,13 +92,13 @@ $(document).ready(function() {
 	 //Every time that the next button is clicked, this cycles through the array.
 	var nextQuestion = function() { 
 
-		$('#next').click(function () {
+		// $('#next').click(function () {
 
 
 		//Increases the counter by one and displays the number in the console
-		counter++
+		counter++;
 		$('input[name=answer]').attr('disabled', false);
-	 	console.log(counter);
+	 	// console.log(counter);
 
 
 	 	//Unchecks the radio button and clears the text
@@ -111,19 +113,19 @@ $(document).ready(function() {
     	$ans2.find("input").prop("value", answerDatabase[1][counter]);
     	$ans3.find("label").text(answerDatabase[2][counter]);
     	$ans3.find("input").prop("value", answerDatabase[2][counter]);
-    	
-    	// completion();
-		});
+
+    	quiz();
+
 		};
-	
+	var number = 10;
+
 	//This is the actual quiz, if the counter is less than the length of the answers array, it advances, if not, it completes
-// 	var quiz = function() {
-// 		if (counter < answerDatabase.length	) {
-// 			nextQuestion(); 
-// 		} else if (counter = answerDatabase.length) {
-// 			console.log("This is getting ridiculous");
-// 			completion();}
-// 		};
-// 	//I call this immediately	
-// 	quiz();
-// });
+	var quiz = function() {
+		if ( counter === answerDatabase.length) {
+			console.log("This is getting ridiculous");
+			completion();}
+		};
+	//I call this immediately	
+		$('#next').click (nextQuestion);
+
+});
