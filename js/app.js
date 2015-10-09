@@ -77,27 +77,24 @@ $(document).ready(function() {
 	//Immediately calls the checkAnswer function
 	checkAnswer();
 
+	 
+	 //I am trying to make a function so when we hit the end of the array, the radio buttons and next button are disabled and it displays the number of correct answers
+	 var completion = function() {
+	 	// if (counter = answerDatabase.length) {
+	 		$('#log').html("Congratulations! You had " + correct + " correct!");
+	 		$('input[name=answer]').attr('disabled', 'disabled');
+	 		$('#next').attr('disabled', true);
+	 	// };
+	 };
 
 	 //Every time that the next button is clicked, this cycles through the array.
-	
-	 var counterAdvance = function() {
-	 	if (counter < answerDatabase.length) {
-	 		counter++;
-	 		console.log("This is a test");
-	 	}
-	 };
-	 
+	var nextQuestion = function() { 
 
-	 // var completion = function() {
-	 // 	if (counter = answerDatabase.length) {
-	 // 		$('#log').html("Congratulations! You had " + correct + " correct!")
-	 // 	};
-	 // }
-	$('#next').click(function () {
+		$('#next').click(function () {
 
 
 		//Increases the counter by one and displays the number in the console
-		counterAdvance();
+		counter++
 		$('input[name=answer]').attr('disabled', false);
 	 	console.log(counter);
 
@@ -117,13 +114,16 @@ $(document).ready(function() {
     	
     	// completion();
 		});
-
+		};
 	
-
-	//This displays to the user the answer that they checked 
-	 // $( "input" ).on( "click", function() {
-  // 		$( "#log" ).html( $( "input:checked" ).val() + " is checked!" );
-		// });
-
-
-});
+	//This is the actual quiz, if the counter is less than the length of the answers array, it advances, if not, it completes
+// 	var quiz = function() {
+// 		if (counter < answerDatabase.length	) {
+// 			nextQuestion(); 
+// 		} else if (counter = answerDatabase.length) {
+// 			console.log("This is getting ridiculous");
+// 			completion();}
+// 		};
+// 	//I call this immediately	
+// 	quiz();
+// });
