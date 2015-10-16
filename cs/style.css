@@ -1,0 +1,29 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	text-align: center;
+}
+
+.row {
+	display: flex;
+}
+
+.center {
+	justify-content: center;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+}
+
+.column-center {
+	align-items: center;
+}
+
+input {
+	width: 80px;
+}
