@@ -1,11 +1,28 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////			To do 			/////////////////////////////////////////////////////////////////////
+// - Fix the bug in the username logic
+// - Create logic for grading the answers
+// - Style in CSS
+// - Add real questions and answers (5 total)
+// - Look into creating a teacher version in order to create these quizzes
+//		- Will most likely need an external database?
+
 	counter = 0;
 
+	//This will get the users name and store it for the end of the quiz
+	var username = "";
+
+	var user = function () {
+		username = prompt('Answer Me!');
+	};
+	
+	user();
+
+	do {
+	user();
+	} while (username === "" || username === null)
+
 	$(document).ready(function() {
-
-	//This starts the counter for our click through function
-	//An option to do here is set it to -1, so the user must click next in order to see the first question upon loading
-
-
 
 	//This is the question database, where the question the student will be asked is stored
 	var questionDatabase = [
@@ -80,10 +97,11 @@
 	checkAnswer();
 
 	 
-	 //I am trying to make a function so when we hit the end of the array, the radio buttons and next button are disabled and it displays the number of correct answers
+	 //This will display the number of correct answers at the end, and disable the next button and the radio buttons
+	 //////////// I need to create logic for "Grading" these answers ////////////
 	 var completion = function() {
 	 	// if (counter = answerDatabase.length) {
-	 		$('#log').html("Congratulations! You had " + correct + " correct!");
+	 		$('#log').html("Congratulations, " + username +"! You had " + correct + " correct!");
 	 		$('input[name=answer]').attr('disabled', 'disabled');
 	 		$('#next').attr('disabled', true);
 	 	// };
@@ -91,9 +109,6 @@
 
 	 //Every time that the next button is clicked, this cycles through the array.
 	var nextQuestion = function() { 
-
-		// $('#next').click(function () {
-
 
 		//Increases the counter by one and displays the number in the console
 		counter++;
