@@ -38,8 +38,8 @@ $(document).ready(function() {
   
   // These are the answer elements
   var $ans1 = $('#ans1'), $ans2 = $('#ans2'), $ans3 = $('#ans3');
-  
-    // The next button
+ 
+     // The next button
     var $nextBtn = $('#next');
   
     // The log message
