@@ -1,0 +1,16 @@
+body {
+	background-color: black;
+	text-align: center;
+	color: white;
+	padding-top: 50px;
+}
+
+input[type="radio"] {
+  margin-top: -1px;
+  vertical-align: middle;
+  float: center;
+}
+
+form {
+	display: block;
+}
