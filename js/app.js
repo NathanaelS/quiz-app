@@ -1,17 +1,26 @@
-	//This is the counter that is referenced by the next button
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////			To do 			/////////////////////////////////////////////////////////////////////
+// - Fix the bug in the username logic
+// - Create logic for grading the answers
+// - Style in CSS
+// - Add real questions and answers (5 total)
+// - Look into creating a teacher version in order to create these quizzes
+//		- Will most likely need an external database?
+
 	counter = 0;
 
-	var user = prompt("Welcome! Before we start this quiz, please tell us your name", "");
+	//This will get the users name and store it for the end of the quiz
+	var username = "";
 
-	console.log(user);
-
-	var checkUser = function() {
-		if (user === "null") {
-			alert("Sorry, that is not a valid name");
-		};
+	var user = function () {
+		username = prompt('Answer Me!');
 	};
+	
+	user();
 
-	checkUser();
+	do {
+	user();
+	} while (username === "" || username === null)
 
 	$(document).ready(function() {
 
@@ -87,9 +96,12 @@
 	//Immediately calls the checkAnswer function
 	checkAnswer();
 
-	 //This will display the number of correct answers when the quiz is over
+	 
+	 //This will display the number of correct answers at the end, and disable the next button and the radio buttons
+	 //////////// I need to create logic for "Grading" these answers ////////////
 	 var completion = function() {
-	 		alert("Congratulations " + user +"! You had " + correct + " correct!");
+	 	// if (counter = answerDatabase.length) {
+	 		$('#log').html("Congratulations, " + username +"! You had " + correct + " correct!");
 	 		$('input[name=answer]').attr('disabled', 'disabled');
 	 		$('#next').attr('disabled', true);
 	 };
