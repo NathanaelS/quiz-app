@@ -13,7 +13,7 @@
 	var username = "";
 
 	var user = function () {
-		username = prompt('Answer Me!');
+		username = prompt('Welcome! Before we begin, please enter your name.');
 	};
 	
 	user();
