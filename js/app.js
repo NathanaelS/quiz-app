@@ -10,17 +10,15 @@
 	counter = 0;
 
 	//This will get the users name and store it for the end of the quiz
-	var username = "";
-
-	var user = function () {
-		username = prompt('Answer Me!');
+	var getUser = function () {
+	username = prompt('Enter a Name');
 	};
-	
-	user();
 
-	do {
-	user();
-	} while (username === "" || username === null)
+	getUser();
+
+	while ( username === "" || username === null ) {
+    getUser();
+	}
 
 	$(document).ready(function() {
 
@@ -104,6 +102,7 @@
 	 		$('#log').html("Congratulations, " + username +"! You had " + correct + " correct!");
 	 		$('input[name=answer]').attr('disabled', 'disabled');
 	 		$('#next').attr('disabled', true);
+	 		$('#submit').attr('disabled', true);
 	 };
 	
 	var nextQuestion = function() { 
