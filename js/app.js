@@ -97,7 +97,9 @@
 	 //This will display the number of correct answers at the end, and disable the next button and the radio buttons
 	 //////////// I need to create logic for "Grading" these answers ////////////
 	 var completion = function() {
-	 	
+
+	 	// if (counter = answerDatabase.length) {
+
 	 		$('#log').html("Congratulations, " + username +"! You had " + correct + " correct!");
 	 		$('input[name=answer]').attr('disabled', 'disabled');
 	 		$('#next').attr('disabled', true);
