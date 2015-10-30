@@ -104,6 +104,7 @@
 	 		$('#log').html("Congratulations, " + username +"! You had " + correct + " correct!");
 	 		$('input[name=answer]').attr('disabled', 'disabled');
 	 		$('#next').attr('disabled', true);
+	 		$('#submit').attr('disabled', true);
 	 };
 	
 	var nextQuestion = function() { 
