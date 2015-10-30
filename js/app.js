@@ -10,17 +10,17 @@
 	counter = 0;
 
 	//This will get the users name and store it for the end of the quiz
-	var username = "";
 
-	var user = function () {
-		username = prompt('Welcome! Before we begin, please enter your name.');
+	var getUser = function () {
+	username = prompt('Enter a Name');
+
 	};
-	
-	user();
 
-	do {
-	user();
-	} while (username === "" || username === null)
+	getUser();
+
+	while ( username === "" || username === null ) {
+    getUser();
+	}
 
 	$(document).ready(function() {
 
