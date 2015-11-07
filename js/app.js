@@ -20,7 +20,7 @@
     getUser();
 	}
 
-	$(document).ready(function() {
+	window.onload = (function() {
 
 	//This is the question database, where the question the student will be asked is stored
 	var questionDatabase = [
@@ -30,8 +30,8 @@
 		];
 	
 	//This prints the first value of the questionDatabase to the page
-	$('#question').text(questionDatabase[counter]);
-	// document.getElementByid('question')
+	// $('#question').text(questionDatabase[counter]);
+	document.getElementById('question').innerHTML = questionDatabase[counter];
 	//These are the answer variables
 	var $ans1 = $('#ans1'), $ans2 = $('#ans2'), $ans3 = $('#ans3');
 
@@ -80,7 +80,7 @@
 
 	//This determines if the answer is correct
 	var checkAnswer = function() {
-		$( "#submit" ).on( "click", function() {
+		document.getElementById("submit").onclick = function() {
 			if ($("input:checked").val() === correctAnswers[counter]) {
 			$( "#log" ).html( $( "input:checked" ).val() + " is correct!" );
 			//if the answer is correct, this value increases
@@ -89,7 +89,7 @@
 			} else {$("#log").html("Sorry, that is wrong")};
 			//when the submit button is clicked, the radio buttons are disabled so no new answers can be chosen
 			$('input[name=answer]').attr('disabled', true);
-	})
+	}
 	};
 	//Immediately calls the checkAnswer function
 	checkAnswer();
