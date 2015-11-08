@@ -30,8 +30,8 @@
 		];
 	
 	//This prints the first value of the questionDatabase to the page
-	$('#question').text(questionDatabase[counter]);
-	// document.getElementByid('question')
+	// $('#question')
+	document.getElementById('question').write(questionDatabase[counter]);
 	//These are the answer variables
 	var $ans1 = $('#ans1'), $ans2 = $('#ans2'), $ans3 = $('#ans3');
 
