@@ -7,7 +7,7 @@
 // - Look into creating a teacher version in order to create these quizzes
 //		- Will most likely need an external database?
 
-	counter = 0;
+	counter = -1;
 
 	// //This will get the users name and store it for the end of the quiz
 	// var getUser = function () {
@@ -20,7 +20,7 @@
  //    getUser();
 	// }
 
-	window.onload = (function() {
+	$(document).ready(function() {
 
 	//This is the question database, where the question the student will be asked is stored
 	var questionDatabase = [
@@ -92,7 +92,7 @@
 	//Immediately calls the checkAnswer function
 	// checkAnswer();
 
-	document.getElementById('submit').onClick = checkAnswer;
+	document.getElementById('submit').onClick = checkAnswer();
 	 
 	 //This will display the number of correct answers at the end, and disable the next button and the radio buttons
 	 //////////// I need to create logic for "Grading" these answers ////////////
@@ -108,6 +108,7 @@
 
 		//Increases the counter by one and displays the number in the console
 		counter++;
+		console.log(counter);
 
 	 	//Unchecks the radio button, enables it, and clears the text
 	 	$('input[name=answer]').attr('checked',false);
