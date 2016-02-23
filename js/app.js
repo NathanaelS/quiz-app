@@ -9,16 +9,16 @@
 
 	counter = 0;
 
-	//This will get the users name and store it for the end of the quiz
-	var getUser = function () {
-	username = prompt('Enter a Name');
-	};
+	// //This will get the users name and store it for the end of the quiz
+	// var getUser = function () {
+	// username = prompt('Enter a Name');
+	// };
 
-	getUser();
+	// getUser();
 
-	while ( username === "" || username === null ) {
-    getUser();
-	}
+	// while ( username === "" || username === null ) {
+ //    getUser();
+	// }
 
 	$(document).ready(function() {
 
