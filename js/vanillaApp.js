@@ -9,22 +9,22 @@
 
 	counter = -1;
 
-	// //This will get the users name and store it for the end of the quiz
-	// var getUser = function () {
-	// username = prompt('Enter a Name');
-	// };
+	//This will get the users name and store it for the end of the quiz
+	var getUser = function () {
+	username = prompt('Enter a Name');
+	};
 
-	// getUser();
+	getUser();
 
-	// while ( username === "" || username === null ) {
- //    getUser();
-	// }
+	while ( username === "" || username === null ) {
+    getUser();
+	}
 
 	$(document).ready(function() {
 
 	//This is the question database, where the question the student will be asked is stored
-	var questionDatabase = [
-		"question1",
+	var questionDatabase = 
+[		"question1",
 		"question2",
 		"question3"
 		]
