@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////			To do 			/////////////////////////////////////////////////////////////////////
-// - Fix the bug in the username logic
+// - Swap out all JQuery for vanilla JS
 // - Create logic for grading the answers
 // - Style in CSS
 // - Add real questions and answers (5 total)
@@ -20,7 +20,7 @@
     getUser();
 	}
 
-	$(document).ready(function() {
+	window.onload = (function() {
 
 	//This is the question database, where the question the student will be asked is stored
 	var questionDatabase = [
@@ -30,6 +30,7 @@
 		];
 	
 	//This prints the first value of the questionDatabase to the page
+
 	$('#question').text(questionDatabase[counter]);
 
 	//These are the answer variables
@@ -80,7 +81,7 @@
 
 	//This determines if the answer is correct
 	var checkAnswer = function() {
-		$( "#submit" ).on( "click", function() {
+		document.getElementById("submit").onclick = function() {
 			if ($("input:checked").val() === correctAnswers[counter]) {
 			$( "#log" ).html( $( "input:checked" ).val() + " is correct!" );
 			//if the answer is correct, this value increases
@@ -89,16 +90,17 @@
 			} else {$("#log").html("Sorry, that is wrong")};
 			//when the submit button is clicked, the radio buttons are disabled so no new answers can be chosen
 			$('input[name=answer]').attr('disabled', true);
-	})
+	}
 	};
 	//Immediately calls the checkAnswer function
 	checkAnswer();
-
 	 
 	 //This will display the number of correct answers at the end, and disable the next button and the radio buttons
 	 //////////// I need to create logic for "Grading" these answers ////////////
 	 var completion = function() {
+
 	 	// if (counter = answerDatabase.length) {
+
 	 		$('#log').html("Congratulations, " + username +"! You had " + correct + " correct!");
 	 		$('input[name=answer]').attr('disabled', 'disabled');
 	 		$('#next').attr('disabled', true);
